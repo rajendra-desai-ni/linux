@@ -1018,4 +1018,13 @@ config FUEL_GAUGE_MM8013
 	  the state of charge, temperature, cycle count, actual and design
 	  capacity, etc.
 
+config E31X_BATTERY
+    tristate "E31X battery driver"
+    depends on MFD_E31X_PMU && POWER_SUPPLY
+    default y
+    help
+      Enable support for the E31X battery hardware. This driver
+      provides battery monitoring and charging status via the
+      power supply class.
+
 endif # POWER_SUPPLY
